@@ -442,7 +442,7 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
     }
 
     private void setUrlFail(boolean fail) {
-        mUrlBar.setTextColor(fail ? Color.RED : Color.BLACK);
+        mUrlBar.setTextColor(fail ? Color.RED : Color.WHITE);
     }
 
     /**
