@@ -191,6 +191,7 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
 
     private void createAndInitializeWebView() {
         WebView webview = new WebView(this);
+        webview.setBackgroundColor(Color.BLACK); // for Youtube Music
         WebSettings settings = webview.getSettings();
         initializeSettings(settings);
 
