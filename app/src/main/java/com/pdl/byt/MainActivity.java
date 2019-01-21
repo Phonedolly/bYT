@@ -258,6 +258,9 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         getContainer().addView(
                 webview, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         setUrlBarText("");
+
+        // Youtube Music 로드하기
+        loadUrlFromUrlBar();
     }
 
     // WebKit permissions which can be granted because either they have no associated Android
@@ -335,6 +338,25 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         mPendingRequests.delete(requestCode);
     }
 
+
+    //기본형
+    public void loadUrlFromUrlBar() {
+        try {
+            URI uri = new URI(YOUTUBE_MUSIC_URL);
+        } catch (URISyntaxException e) {
+            String message = "<html><body>URISyntaxException: " + e.getMessage() + "</body></html>";
+            mWebView.loadData(message, "text/html", "UTF-8");
+            setUrlFail(true);
+            return;
+        }
+
+        setUrlBarText(YOUTUBE_MUSIC_URL);
+        setUrlFail(false);
+        loadUrl(YOUTUBE_MUSIC_URL);
+        hideKeyboard(mUrlBar);
+    }
+
+    //View를 Parameter로
     public void loadUrlFromUrlBar(View view) {
         String url = mUrlBar.getText().toString();
         try {
