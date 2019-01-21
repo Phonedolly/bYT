@@ -69,6 +69,8 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
     private static final String RESOURCE_FILE_URL = "RESOURCE_FILE_URL";
     // WebKit permissions with no corresponding Android permission can always be granted
     private static final String NO_ANDROID_PERMISSION = "NO_ANDROID_PERMISSION";
+    // Youtube Music URL using HTTPS
+    private static final String YOUTUBE_MUSIC_URL = "https://music.youtube.com";
 
     // Map from WebKit permissions to Android permissions
     private static final HashMap<String, String> sPermissions;
