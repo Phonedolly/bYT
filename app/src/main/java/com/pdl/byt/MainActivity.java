@@ -556,4 +556,15 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         return filter == null
                 || (filter.countDataAuthorities() == 0 && filter.countDataPaths() == 0);
     }
+
+    // 뒤로가기 키 액션 지정
+    @Override
+    public void onBackPressed() {
+        if (mWebView.canGoBack()) {
+            mWebView.goBack();
+        }
+        else {
+            super.onBackPressed();
+        }
+    }
 }
